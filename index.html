@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <title>HDTF new UI</title>
+    <style></style>
+  </head>
+
+  <body>
+    <video autoplay muted loop controls id="vidBg" controls>
+      <source src="./assets/Background04.webm" type="video/webm" />
+      No HTML5 vid support. Get yourself a better browser lmao.
+    </video>
+    <audio id="snd_hover" src="./assets/buttonrollover.wav">
+      <source src="/assets/buttonrollover.wav" />
+    </audio>
+    <audio id="snd_click" src="./assets/buttonclickrelease.wav"></audio>
+
+    <div class="items">
+      <img src="./assets/logo_.png" id="gamelogo" />
+      <nav id="main_menu" class="menu">
+        <div class="selection main_button" id="play_button"><p>Play</p></div>
+        <div class="selection" id="option_button"><p>Options</p></div>
+        <div class="selection" id="quit_button"><p>Quit</p></div>
+      </nav>
+      <nav id="play_menu" class="menu d-none">
+        <div class="selection main_button"><p>Continue campaign</p></div>
+        <div class="selection"><p>New game</p></div>
+        <div class="selection" id="save_button"><p>Load a save</p></div>
+        <div class="selection"><p>Alternative game modes</p></div>
+        <div class="return" id="backMain">
+          <i class="bi bi-chevron-left"></i>
+        </div>
+      </nav>
+      <nav class="centeredMenu d-none">
+        <div class="quit_prompt d-none" id="quit_prompt">
+          <div class="quit_text"><p>Are you sure you want to quit ?</p></div>
+          <div class="quit_buttons">
+            <div class="quit_button"><p>Yes</p></div>
+            <div class="quit_button"><p>No</p></div>
+          </div>
+        </div>
+        <div id="option_menu" class="option_menu d-none">
+          <nav class="option_tab">
+            <div class="option_nav">Z</div>
+            <div class="option_tab--on" id="option_button-controls">
+              Controls
+            </div>
+            <div class="option_tab--off" id="option_button-graphics">
+              Graphics
+            </div>
+            <div class="option_tab--off" id="option_button-audio">Audio</div>
+            <div class="option_tab--off" id="option_button-accessibility">
+              Accessibility
+            </div>
+            <div class="option_tab--off" id="option_button-advanced">
+              Advanced
+            </div>
+            <div class="option_nav">C</div>
+          </nav>
+          <div id="option_controls" class="option__layout">
+            <div class="option__layout--items">
+              <div class="option__choices scroll-y">
+                <p class="option__choice--title">Mouse inputs</p>
+                <div class="option__choice">
+                  <span> Mouse sensitivity </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Enable mouse acceleration </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Acceleration ratio </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <p class="option__choice--title">Movement</p>
+                <div class="option__choice">
+                  <span> Walk forward </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Walk backward </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Strafe left </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Strafe right </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Jump </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Crouch </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Prone </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Lean right </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Lean left </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <p class="option__choice--title">Combat</p>
+                <div class="option__choice">
+                  <span> Shoot </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Aim </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Use weapon accessory </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Quick knife </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <p class="option__choice--title">Interactions</p>
+                <div class="option__choice">
+                  <span> Interact </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Holster weapon </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span></span>
+                  <input type="text" class="input_control" />
+                </div>
+                <p class="option__choice--title">Inventory</p>
+                <div class="option__choice">
+                  <span> Open inventory </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Melee weapon </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Handgun </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Rifle / SMG </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Heavy weapon </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Offensive equipement </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Defensive equipement </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Other equipement </span>
+                  <input type="text" class="input_control" />
+                </div>
+              </div>
+              <div class="return" id="backMain">
+                <i class="bi bi-chevron-left"></i>
+              </div>
+            </div>
+            <div class="option__layout--desc">
+              <img
+                src="./assets/placeholder.png"
+                class="option__layout--desc--img"
+              />
+              <p class="option__layout--desc--info">
+                Depending on what you hover you should see a gif of the action
+                and a text to explain. I don't wanna spend years in my js file
+                to do that so please use your imagination ! If i missed some
+                settings, it's fine, i just wanted to show what it could look
+                like + my ideas of new settings.
+              </p>
+              <p class="option__layout--desc--impact"></p>
+            </div>
+          </div>
+          <div id="option_graphics" class="option__layout d-none">
+            <div class="option__layout--items">
+              <div class="option__choices scroll-y">
+                <p class="option__choice--title">Visual fidelity</p>
+                <div class="option__choice">
+                  <span> Resolution </span>
+                  <select class="input_control">
+                    <option>1920x1080 (Native)</option>
+                    <option>1280x720</option>
+                    <option>920x480p</option>
+                    <option>480x360p</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Texture quality </span>
+                  <select class="input_control">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Model quality </span>
+                  <select class="input_control">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Filtering of whatever </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Bilinear</option>
+                    <option>Trilinear</option>
+                    <option>2X</option>
+                    <option>4X</option>
+                    <option>8X</option>
+                    <option>16X</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Antialiasing </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>FXAA</option>
+                    <option>MSAA</option>
+                    <option>FSR</option>
+                  </select>
+                </div>
+                <p class="option__choice--title">Post processing</p>
+                <div class="option__choice">
+                  <span> Chromatic aberation </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Motion blur </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Lens flare glow </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Ambient occlusion </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Enable HDR </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> HDR Type </span>
+                  <select class="input_control">
+                    <option>Bloom</option>
+                    <option>Full</option>
+                  </select>
+                </div>
+              </div>
+              <div class="return" id="backMain">
+                <i class="bi bi-chevron-left"></i>
+              </div>
+            </div>
+            <div class="option__layout--desc">
+              <img
+                src="./assets/placeholder.png"
+                class="option__layout--desc--img"
+              />
+              <p class="option__layout--desc--info">
+                Depending on what you hover you should see a gif of the action
+                and a text to explain. I don't wanna spend years in my js file
+                to do that so please use your imagination ! If i missed some
+                settings, it's fine, i just wanted to show what it could look
+                like + my ideas of new settings.
+              </p>
+              <p class="option__layout--desc--impact"></p>
+            </div>
+          </div>
+          <div id="option_audio" class="option__layout d-none">
+            <div class="option__layout--items">
+              <div class="option__choices scroll-y">
+                <p class="option__choice--title">Volume sliders</p>
+                <div class="option__choice">
+                  <span> General volume </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Sound effect volume </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Music volume </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Dialogue volume </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <!-- <p class="option__choice--title">Microphone</p>
+                <div class="option__choice">
+                  <span> Enable Microphone </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Input volume </span>
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value="50"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div> -->
+              </div>
+              <div class="return" id="backMain">
+                <i class="bi bi-chevron-left"></i>
+              </div>
+            </div>
+            <div class="option__layout--desc">
+              <img
+                src="./assets/placeholder.png"
+                class="option__layout--desc--img"
+              />
+              <p class="option__layout--desc--info">
+                Depending on what you hover you should see a gif of the action
+                and a text to explain. I don't wanna spend years in my js file
+                to do that so please use your imagination ! If i missed some
+                settings, it's fine, i just wanted to show what it could look
+                like + my ideas of new settings.
+              </p>
+              <p class="option__layout--desc--impact"></p>
+            </div>
+          </div>
+          <div id="option_accessibility" class="option__layout d-none">
+            <div class="option__layout--items">
+              <div class="option__choices scroll-y">
+                <div class="option__choice">
+                  <span> Subtitles </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Sound effects</option>
+                    <option>Full</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Objective helper </span>
+                  <select class="input_control">
+                    <option>None</option>
+                    <option>Objective reminder</option>
+                    <option>3D Waypoint</option>
+                    <option>Both</option>
+                  </select>
+                </div>
+              </div>
+              <div class="return" id="backMain">
+                <i class="bi bi-chevron-left"></i>
+              </div>
+            </div>
+            <div class="option__layout--desc">
+              <img
+                src="./assets/placeholder.png"
+                class="option__layout--desc--img"
+              />
+              <p class="option__layout--desc--info">
+                Depending on what you hover you should see a gif of the action
+                and a text to explain. I don't wanna spend years in my js file
+                to do that so please use your imagination ! If i missed some
+                settings, it's fine, i just wanted to show what it could look
+                like + my ideas of new settings.
+              </p>
+              <p class="option__layout--desc--impact"></p>
+            </div>
+          </div>
+          <div id="option_advanced" class="option__layout d-none">
+            <div class="option__layout--items">
+              <div class="option__choices scroll-y">
+                <div class="option__choice">
+                  <span> Auto lean </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Automatic crouch jump </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Difficulty </span>
+                  <select class="input_control">
+                    <option>Easy</option>
+                    <option>Normal</option>
+                    <option>Hard</option>
+                    <option>Harder</option>
+                  </select>
+                </div>
+              </div>
+              <div class="return" id="backMain">
+                <i class="bi bi-chevron-left"></i>
+              </div>
+            </div>
+            <div class="option__layout--desc">
+              <img
+                src="./assets/placeholder.png"
+                class="option__layout--desc--img"
+              />
+              <p class="option__layout--desc--info">
+                Depending on what you hover you should see a gif of the action
+                and a text to explain. I don't wanna spend years in my js file
+                to do that so please use your imagination ! If i missed some
+                settings, it's fine, i just wanted to show what it could look
+                like + my ideas of new settings.
+              </p>
+              <p class="option__layout--desc--impact"></p>
+            </div>
+          </div>
+        </div>
+        <ol id="save_menu" class="save_menu d-none">
+          <div class="save_menu--header">
+            <p>Save files</p>
+            <p>Total save files : 69</p>
+            <p>Total play time : 100h</p>
+          </div>
+          <div class="save_menu--info"><p>Lastest Autosave</p></div>
+          <div class="save_menu--choices autosave_save">
+            <li class="save_menu--save">
+              <img
+                src="./assets/placeholder.png"
+                class="save_menu--data--image"
+              />
+              <div class="save_menu--data">
+                <p class="save_menu--data--title">Act 1 : Trust</p>
+                <p>
+                  You met Adam, a Black ops who somehow survived Black Mesa. He
+                  seems to have ulterior motives, but for now he only wants to
+                  survive. He can help up, so let's accept his help for now.
+                </p>
+                <p>Play time : 31:17</p>
+                <p>29/05/2023</p>
+              </div>
+            </li>
+          </div>
+          <div class="save_menu--info"><p>All save files</p></div>
+          <div class="save_menu--choices scroll-y">
+            <li class="save_menu--save">
+              <img
+                src="./assets/placeholder.png"
+                class="save_menu--data--image"
+              />
+              <div class="save_menu--data">
+                <p class="save_menu--data--title">Act 2 : God Forsaken</p>
+                <p>
+                  You were lost in Alaska and found a combine train outpost. In
+                  hopes of finding an escape and AA weaponry, you keep going
+                  forward.
+                </p>
+                <p>Play time : 1:04:20</p>
+                <p>22/08/2021</p>
+              </div>
+            </li>
+            <li class="save_menu--save">
+              <img
+                src="./assets/placeholder.png"
+                class="save_menu--data--image"
+              />
+              <div class="save_menu--data">
+                <p class="save_menu--data--title">
+                  Custom map : aed_cityescape
+                </p>
+                <p>%map_description%</p>
+                <p>Play time : 14:57</p>
+                <p>29/05/2023</p>
+              </div>
+            </li>
+            <li class="save_menu--save">
+              <img
+                src="./assets/placeholder.png"
+                class="save_menu--data--image"
+              />
+              <div class="save_menu--data">
+                <p class="save_menu--data--title">Act 3 : Freeman must die</p>
+                <p>
+                  You met Boris once again. You were sent to Black Mesa East, a
+                  rebel outpost, but couldn't find freeman. Your search
+                  continues.
+                </p>
+                <p>Play time : 1:54:38</p>
+                <p>18/09/2022</p>
+              </div>
+            </li>
+            <li class="save_menu--save">
+              <img
+                src="./assets/placeholder.png"
+                class="save_menu--data--image"
+              />
+              <div class="save_menu--data">
+                <p class="save_menu--data--title">Act 1 : Trust</p>
+                <p>
+                  You met Adam, a Black ops who somehow survived Black Mesa. He
+                  seems to have ulterior motives, but for now he only wants to
+                  survive. He can help up, so let's accept his help for now.
+                </p>
+                <p>Play time : 31:17</p>
+                <p>29/05/2023</p>
+              </div>
+            </li>
+          </div>
+          <div class="return" id="play_button">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+        </ol>
+      </nav>
+      <!-- <button id="button" onclick="myFunction()">Pause</button> -->
+    </div>
+
+    <!-- <script>
+var video = document.getElementById("vidBg");
+var btn = document.getElementById("button");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script> -->
+  </body>
+  <script src="./assets/script.js"></script>
+</html>
