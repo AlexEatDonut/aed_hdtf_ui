@@ -18,7 +18,7 @@
       No HTML5 vid support. Get yourself a better browser lmao.
     </video>
     <audio id="snd_hover" src="./assets/buttonrollover.wav">
-      <source src="/assets/buttonrollover.wav" />
+      <source src="./assets/buttonrollover.wav" />
     </audio>
     <audio id="snd_click" src="./assets/buttonclickrelease.wav"></audio>
 
@@ -33,8 +33,18 @@
         <div class="selection main_button"><p>Continue campaign</p></div>
         <div class="selection"><p>New game</p></div>
         <div class="selection" id="save_button"><p>Load a save</p></div>
-        <div class="selection"><p>Alternative game modes</p></div>
+        <div class="selection" id="mode_button">
+          <p>Alternative game modes</p>
+        </div>
         <div class="return" id="backMain">
+          <i class="bi bi-chevron-left"></i>
+        </div>
+      </nav>
+      <nav id="mode_menu" class="menu d-none">
+        <div class="selection"><p>Survival</p></div>
+        <div class="selection"><p>On the clock</p></div>
+        <div class="selection"><p>Workshop maps</p></div>
+        <div class="return" id="play_button">
           <i class="bi bi-chevron-left"></i>
         </div>
       </nav>
@@ -380,6 +390,17 @@
                     id="myRange"
                   />
                 </div>
+                <div class="option__choice">
+                  <span> Audio setup </span>
+                  <select class="input_control">
+                    <option>Mono</option>
+                    <option>Stereo (Headset)</option>
+                    <option>Stereo (Speakers)</option>
+                    <option>
+                      Ultra mega audiophile setup that costs 50 grand
+                    </option>
+                  </select>
+                </div>
                 <!-- <p class="option__choice--title">Microphone</p>
                 <div class="option__choice">
                   <span> Enable Microphone </span>
@@ -419,6 +440,30 @@
           <div id="option_accessibility" class="option__layout d-none">
             <div class="option__layout--items">
               <div class="option__choices scroll-y">
+                <p class="option__choice--title">Gameplay accessibility</p>
+                <div class="option__choice">
+                  <span> Difficulty </span>
+                  <select class="input_control">
+                    <option>Easy</option>
+                    <option>Normal</option>
+                    <option>Hard</option>
+                    <option>Harder</option>
+                  </select>
+                </div>
+                <div class="option__choice">
+                  <span> Auto lean </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Automatic crouch jump </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Fast weapon switch </span>
+                  <input type="checkbox" />
+                </div>
+
+                <p class="option__choice--title">Sound accessibility</p>
                 <div class="option__choice">
                   <span> Subtitles </span>
                   <select class="input_control">
@@ -427,6 +472,9 @@
                     <option>Full</option>
                   </select>
                 </div>
+                <p class="option__choice--title">
+                  3D Environnement accessibility
+                </p>
                 <div class="option__choice">
                   <span> Objective helper </span>
                   <select class="input_control">
@@ -435,6 +483,44 @@
                     <option>3D Waypoint</option>
                     <option>Both</option>
                   </select>
+                </div>
+                <p class="option__choice--title">Visual accessibility</p>
+                <div class="option__choice">
+                  <span> Gamma </span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="5"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Contrast </span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="5"
+                    class="slider"
+                    id="myRange"
+                  />
+                </div>
+                <div class="option__choice">
+                  <span> Low health screen effect </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Screen shake strength </span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="5"
+                    class="slider"
+                    id="myRange"
+                  />
                 </div>
               </div>
               <div class="return" id="backMain">
@@ -459,22 +545,37 @@
           <div id="option_advanced" class="option__layout d-none">
             <div class="option__layout--items">
               <div class="option__choices scroll-y">
+                <p class="option__choice--title">Advanced graphics option</p>
                 <div class="option__choice">
-                  <span> Auto lean </span>
-                  <input type="checkbox" />
-                </div>
-                <div class="option__choice">
-                  <span> Automatic crouch jump </span>
-                  <input type="checkbox" />
-                </div>
-                <div class="option__choice">
-                  <span> Difficulty </span>
+                  <span> mat_picmip </span>
                   <select class="input_control">
-                    <option>Easy</option>
-                    <option>Normal</option>
-                    <option>Hard</option>
-                    <option>Harder</option>
+                    <option>-10</option>
+                    <option>-5</option>
+                    <option>-2</option>
+                    <option>-1</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>5</option>
+                    <option>10</option>
                   </select>
+                </div>
+                <p class="option__choice--title">Developper features</p>
+                <div class="option__choice">
+                  <span> Developper console </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Developper console shortcut </span>
+                  <input type="text" class="input_control" />
+                </div>
+                <div class="option__choice">
+                  <span> Dev menu </span>
+                  <input type="checkbox" />
+                </div>
+                <div class="option__choice">
+                  <span> Dev menu shortcut </span>
+                  <input type="text" class="input_control" />
                 </div>
               </div>
               <div class="return" id="backMain">
@@ -514,8 +615,9 @@
                 <p class="save_menu--data--title">Act 1 : Trust</p>
                 <p>
                   You met Adam, a Black ops who somehow survived Black Mesa. He
-                  seems to have ulterior motives, but for now he only wants to
-                  survive. He can help up, so let's accept his help for now.
+                  seems to have ulterior motives, but like everyone he only
+                  wants to survive. He can help up, so let's accept his help for
+                  now.
                 </p>
                 <p>Play time : 31:17</p>
                 <p>29/05/2023</p>
@@ -579,8 +681,9 @@
                 <p class="save_menu--data--title">Act 1 : Trust</p>
                 <p>
                   You met Adam, a Black ops who somehow survived Black Mesa. He
-                  seems to have ulterior motives, but for now he only wants to
-                  survive. He can help up, so let's accept his help for now.
+                  seems to have ulterior motives, but like everyone he only
+                  wants to survive. He can help up, so let's accept his help for
+                  now.
                 </p>
                 <p>Play time : 31:17</p>
                 <p>29/05/2023</p>
