@@ -4,7 +4,7 @@
 @import url("centeredMenus.css");
 * {
   box-sizing: border-box;
-  scrollbar-color: rgba(160, 160, 160, 1) rgba(0, 0, 0, 0);
+  scrollbar-color: rgba(120, 120, 120, 1) rgba(0, 0, 0, 0);
   scrollbar-width: 1rem;
 }
 
@@ -13,7 +13,7 @@
   background-color: rgba(0, 0, 0, 0);
 }
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(160, 160, 160, 1);
+  background-color: rgba(120, 120, 120, 1);
 }
 
 .d-none {
@@ -31,7 +31,7 @@ body {
 }
 #vidBg {
   position: fixed;
-  right: -15%;
+  right: -19%;
   bottom: 0;
   aspect-ratio: 16/9;
   height: 100%;
