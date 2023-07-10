@@ -4,10 +4,10 @@
   transform: translateX(-50%);
   position: fixed;
   width: 80vmax;
-  height: 75vmin;
+  height: 90vmin;
 }
 .centeredMenu > * {
-  background: rgba(100, 100, 100, 0.8);
+  background: rgba(60, 60, 60, 0.8);
   outline: 0.3vmin solid rgba(255, 255, 255, 1);
   border-radius: 0.1vmax;
   height: 100%;
@@ -82,7 +82,7 @@
 }
 .save_menu--save:hover {
   outline: 1vmin solid rgba(255, 255, 255, 0.8);
-  background: rgba(170, 170, 170, 0.4);
+  background: rgba(120, 120, 120, 0.4);
 }
 .save_menu--data {
   padding: 1.25rem;
@@ -142,17 +142,17 @@
 }
 .option_tab--on {
   border-radius: 0.3vmin 0.2vmin 0 0;
-  background: rgba(170, 170, 170, 0.6);
+  background: rgba(130, 130, 130, 0.6);
   border: 0.2vmin solid rgba(255, 255, 255, 0.8);
 }
 .option_tab--off {
   border-radius: 0.3vmin 0.2vmin 0 0;
-  background: rgba(170, 170, 170, 0.3);
+  background: rgba(120, 120, 120, 0.3);
   border: 0.2vmin solid rgba(255, 255, 255, 0.4);
 }
 .option_tab--off:hover {
   border-radius: 0.3vmin 0.2vmin 0 0;
-  background: rgba(170, 170, 170, 0.4);
+  background: rgba(130, 130, 130, 0.4);
   border: 0.2vmin solid rgba(255, 255, 255, 0.6);
 }
 .option__layout {
@@ -176,7 +176,7 @@
 .option__choices {
   overflow-x: hidden;
   width: 40vmax;
-  height: 64vmin;
+  height: 77vmin;
 }
 .option__choice--title {
   margin-top: 1rem;
@@ -197,7 +197,7 @@
   text-align: center;
   height: 100%;
   line-height: 2;
-  background-color: rgba(170, 170, 170, 0.5);
+  background-color: rgba(120, 120, 120, 0.5);
   border: 0.2vmin solid rgba(255, 255, 255, 0.4);
 }
 .input_control {
@@ -206,12 +206,11 @@
   color: white;
   padding: 0 1rem;
   height: 100%;
-  background: rgba(170, 170, 170, 0.3);
+  background: rgba(120, 120, 120, 0.3);
   border: 0.2vmin solid rgba(255, 255, 255, 0.4);
 }
 .input_control:focus {
-  background: rgba(170, 170, 170, 0.4);
-
+  background: rgba(130, 130, 130, 0.4);
   outline: 0;
   border: 0.2min solid rgba(255, 255, 255, 0.6);
 }
