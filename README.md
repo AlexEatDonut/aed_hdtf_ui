@@ -5,7 +5,7 @@ Because of web browsers caring more about your User Experience than this kind of
 
 # "How do i test it out ?"
 
-You can see the result of the work about in real time in here : aedhdtfui.netlify.app
+You can see the result of the work about in real time in here : https://aedhdtfui.netlify.app
 At some point I will bother hosting the page somewwhere but for now, that
 
 # "Imma yoink your code :trollface:"
