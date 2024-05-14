@@ -7,8 +7,11 @@
   height: 90vmin;
 }
 .centeredMenu > * {
-  background: rgba(60, 60, 60, 0.8);
-  outline: 0.3vmin solid rgba(255, 255, 255, 1);
+  background-color: rgba(48, 48, 48, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  outline: 0.3vmin solid rgba(64, 64, 64, 1);
   border-radius: 0.1vmax;
   height: 100%;
   width: 100%;
@@ -43,7 +46,7 @@
   align-items: center;
   justify-content: center;
   width: 17vw;
-  border: 1px solid white;
+  border: 1px solid rgba(128, 128, 128, 0.5);
 }
 .save_menu {
   position: relative;
@@ -116,7 +119,7 @@
 .option_tab {
   display: flex;
   margin: 0 0 0.5vmin 0;
-  border-bottom: 0.5vmin solid rgba(255, 255, 255, 0.8);
+  border-bottom: 0.5vmin solid rgba(64, 64, 64, 0.8);
   justify-content: space-around;
   align-items: center;
   width: 100%;

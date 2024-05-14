@@ -2,16 +2,17 @@
 .return {
   display: flex;
   align-items: center;
-
   border-radius: 2px;
   font-size: 2rem;
   height: 5rem;
-  background: rgba(170, 170, 170, 0.3);
+  background-color: rgba(48, 48, 48, 0.5);
   color: rgb(255, 255, 255);
   /* background-size: 150%;
   background-position: right; */
   transition: 255ms;
-  border: 2px solid rgba(255, 255, 255, 0);
+  border: 2px solid rgba(64, 64, 64, 0);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   border-bottom: rgb(255, 255, 255);
   transition: 300ms;
@@ -31,8 +32,8 @@
 .selection:hover,
 .return:hover {
   background-position: center;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  background: rgba(170, 170, 170, 0.4);
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  background-color: rgba(64, 64, 64, 0.5);
   color: rgb(255, 255, 255);
 }
 .selection:hover {
@@ -49,3 +50,5 @@
 .return {
   justify-content: center;
 }
+
+/* border: 2px solid rgba(255, 255, 255, 0.1); */
