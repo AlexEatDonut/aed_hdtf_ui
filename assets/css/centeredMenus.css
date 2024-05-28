@@ -30,7 +30,7 @@
 }
 .quit_text {
   width: 100%;
-  padding: 2rem;
+  padding: 1vw;
   text-align: center;
 }
 .quit_buttons {
@@ -42,7 +42,7 @@
 .quit_button {
   height: 100%;
   display: flex;
-  padding: 1rem 0;
+  padding: 0.5vw 0;
   align-items: center;
   justify-content: center;
   width: 17vw;
@@ -52,43 +52,56 @@
   position: relative;
 }
 .save_menu--header {
-  height: 5vmin;
+  height: 4vmin;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .save_menu--info {
-  width: 80%;
+  width: 85%;
   margin: 0 auto 0 auto;
-  padding: 1% 0;
+  padding: 1vh 0;
 }
 .autosave_save {
-  padding: 0 0 1.25rem 0;
+  padding: 0 0 1.25vh 0;
+  display: flex !important;
   width: 100%;
 }
+
+.autosave_save .save_menu--data--image {
+  height: 100% !important;
+  padding: 0;
+  aspect-ratio: 16/9;
+}
 .save_menu--choices {
-  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 1.5vh;
+  width: 85%;
   margin: 0 auto 0 auto;
   padding: 1vmin;
-  max-height: 45%;
+  max-height: 55%;
 }
 .save_menu--save {
   border-radius: 0.2vmin;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 1vh;
   height: 20vmin;
-  outline: 0.3vmin solid rgba(255, 255, 255, 0.2);
-  background: rgba(170, 170, 170, 0.3);
+  outline: 0.3vmin solid rgba(255, 255, 255, 0.1);
+  background: rgba(170, 170, 170, 0.1);
   transition: 200ms;
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .save_menu--save:hover {
-  outline: 1vmin solid rgba(255, 255, 255, 0.8);
+  outline: 1vmin solid rgba(255, 255, 255, 0.5);
   background: rgba(120, 120, 120, 0.4);
 }
 .save_menu--data {
-  padding: 1.25rem;
+  padding: 1vh;
+  font-size: 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -96,15 +109,17 @@
 .save_menu--data--image {
   border-radius: 0.2vmin 0 0 0.2vmin;
   height: 100%;
-  aspect-ratio: 16/9;
+  width: 33%;
+  object-fit: cover;
+  padding: auto 0;
 }
 .save_menu--data--title {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
 }
 .save_menu .return {
   position: absolute;
-  left: 2vmin;
-  bottom: 1%;
+  left: 1.5vmin;
+  bottom: 1vh;
   background: rgba(0, 0, 0, 0) !important;
   border-radius: 1vmin;
 }
@@ -119,7 +134,7 @@
 .option_tab {
   display: flex;
   margin: 0 0 0.5vmin 0;
-  border-bottom: 0.5vmin solid rgba(64, 64, 64, 0.8);
+  border-bottom: 0.5vmin solid rgba(64, 64, 64, 0.4);
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -146,17 +161,17 @@
 .option_tab--on {
   border-radius: 0.3vmin 0.2vmin 0 0;
   background: rgba(130, 130, 130, 0.6);
-  border: 0.2vmin solid rgba(255, 255, 255, 0.8);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.6);
 }
 .option_tab--off {
   border-radius: 0.3vmin 0.2vmin 0 0;
   background: rgba(120, 120, 120, 0.3);
-  border: 0.2vmin solid rgba(255, 255, 255, 0.4);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.2);
 }
 .option_tab--off:hover {
   border-radius: 0.3vmin 0.2vmin 0 0;
   background: rgba(130, 130, 130, 0.4);
-  border: 0.2vmin solid rgba(255, 255, 255, 0.6);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.4);
 }
 .option__layout {
   display: flex;
@@ -169,7 +184,7 @@
 .option__layout--items .return {
   height: 4vmin;
   width: 4vmin;
-  font-size: 1rem;
+  font-size: 1vw;
 }
 
 .option__choices:-webkit-scrollbar {
@@ -182,40 +197,40 @@
   height: 77vmin;
 }
 .option__choice--title {
-  margin-top: 1rem;
-  font-size: 1.25rem;
+  margin-top: 2vh;
+  font-size: 1.25vw;
   width: 40vmax;
   text-align: center;
 }
 .option__choice {
-  padding-top: 2rem;
+  padding-top: 2vh;
   width: 80%;
   height: 10vmin;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 1.5vh auto;
   display: grid;
   grid-template-columns: 2.5fr 5fr;
 }
 .option__choice span {
-  padding: 0 1rem;
+  padding: 0 1vw;
   text-align: center;
   height: 100%;
   line-height: 2;
-  background-color: rgba(120, 120, 120, 0.5);
-  border: 0.2vmin solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(120, 120, 120, 0.2);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.3);
 }
 .input_control {
   text-align: end;
-  font-size: 1.5rem;
+  font-size: 1vw;
   color: white;
-  padding: 0 1rem;
+  padding: 0 1vw;
   height: 100%;
-  background: rgba(120, 120, 120, 0.3);
-  border: 0.2vmin solid rgba(255, 255, 255, 0.4);
+  background: rgba(120, 120, 120, 0.2);
+  border: 0.2vmin solid rgba(255, 255, 255, 0.3);
 }
 .input_control:focus {
-  background: rgba(130, 130, 130, 0.4);
+  background: rgba(130, 130, 130, 0.3);
   outline: 0;
-  border: 0.2min solid rgba(255, 255, 255, 0.6);
+  border: 0.2min solid rgba(255, 255, 255, 0.4);
 }
 .option__layout--desc {
   display: flex;
@@ -226,7 +241,7 @@
 .option__layout--desc--img {
   width: 80%;
   aspect-ratio: 16/9;
-  margin-bottom: 2rem;
+  margin-bottom: 2vh;
 }
 .option__layout--desc--info {
   width: 80%;
