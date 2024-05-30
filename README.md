@@ -11,4 +11,4 @@ At some point I will bother hosting the page somewhere else, but for now, that w
 # "Imma yoink your code :trollface:"
 
 I couldn't care less. It's not like you will be able to understand anything. Plus, I made sure it's free to "kindly borrow".
-The only condition is that I would prefer to be credited if this is mentionned or used in a commercial project, especially videos (even if you get no moeny out of it), but you're not _legally_ obligated to.
+The only condition is that I would prefer to be credited if this is mentionned or used in a commercial project, especially videos (even if you get no money out of it), but you're not _legally_ obligated to.
